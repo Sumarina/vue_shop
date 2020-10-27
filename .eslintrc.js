@@ -1,14 +1,19 @@
 module.exports = {
   root: true,
+
   env: {
-    node: true
+    node: true,
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'eslint-plugin-vue',
   },
+
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
-  }
+    'no-console': 'off',
+    'no-debugger': 'off',
+    'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }], //不加默认变成双引号 参考url:https://github.com/prettier/eslint-plugin-prettier#options
+  },
 };
